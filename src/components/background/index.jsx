@@ -4,7 +4,7 @@ const Background = () => {
   const [data, setData] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState(true);
   const [isWinner, setIsWinner] = useState(false);
-  const [isTie, setIsTie] = useState(false); // Yeni durum: beraberlik kontrolü
+  const [isTie, setIsTie] = useState(false); 
 
   const ClickHandler = (i) => {
     if (data[i] === "" && !isWinner && !isTie) {
@@ -35,7 +35,7 @@ const Background = () => {
       }
     }
 
-    // Oyunun berabere olduğunu kontrol et
+   
     if (!arr.includes("") && !isWinner) {
       setIsTie(true);
     }
@@ -45,7 +45,7 @@ const Background = () => {
 
   const ResetClick = () => {
     setIsWinner(false);
-    setIsTie(false); // Oyunu sıfırlarken beraberlik durumunu da sıfırla
+    setIsTie(false);
     setData(["", "", "", "", "", "", "", "", ""]);
     setPlayer(true);
   };
@@ -70,7 +70,7 @@ const Background = () => {
                   </div>
                 </div>
               </>
-            ) : isTie ? ( // Beraberlik durumu kontrolü
+            ) : isTie ? (
               <>
                 <div className={styles.overlay}></div>
                 <div className={styles.backgroundcontrol}>
